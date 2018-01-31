@@ -3,7 +3,8 @@ This describes the resources that make up the **Movie** REST API v1.
 # Schema
 All API access is over HTTP, and accessed from the `http://localhost/5000`. All data is send and received as JSON.
 ## Show all the users
-Return a collection of users<br>
+Return a collection of users
+
 | URL | `/users` |
 |---|---|
 | Method | `[GET]` |
@@ -11,6 +12,7 @@ Return a collection of users<br>
 | Data Params | None |
 | Success Response| Status code: `200`<br>Content: [{ id: 1, fName: "Henry", lName: "Ford", email: "123@123.com" }, { id: 2, fName: "Henry", lName: "Ford", email: "123@123.com" }] |
 | Error Response | Status code: `500`<br>Content: { error: "No users found" } |
+
 Sample Call:
 ```
 axios.get('/api/users')
@@ -20,7 +22,8 @@ axios.get('/api/users')
 ```
 
 ## Show single user
-Return a single user<br>
+Return a single user
+
 | URL | `/users/:id` |
 |---|---|
 | Method | `[GET]` |
@@ -28,6 +31,7 @@ Return a single user<br>
 | Data Params | None |
 | Success Response| Status code: `200`<br>Content: { id: 1, fName: "Henry", lName: "Ford", email: "123@123.com" } |
 | Error Response | Status code: `500`<br>Content: { error: "No user found" } |
+
 Sample Call:
 ```
 axios.get('/api/users/1')
@@ -37,7 +41,8 @@ axios.get('/api/users/1')
 ```
 
 ## Create a user
-Create a user if not existing<br>
+Create a user if not existing
+
 | URL | `/users` |
 |---|---|
 | Method | `[POST]` |
@@ -45,6 +50,7 @@ Create a user if not existing<br>
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
 | Success Response| Status code: `201`<br>Content: `{ success: "User created", { lName: "Tom", fName: "Steve", email: "123@123.com" } }` |
 | Error Response | Status code: `400 BAD REQUEST`<br>Content: { error: "fName is required" } |
+
 Sample Call:
 ```
 axios.post('/api/users', { fName: "Jerry", lName: "John", email: "123@123.com" })
@@ -54,7 +60,8 @@ axios.post('/api/users', { fName: "Jerry", lName: "John", email: "123@123.com" }
 ```
 
 ## Update the user
-Update the user and return the updated resource<br>
+Update the user and return the updated resource
+
 | URL | `/users/:id` |
 |---|---|
 | Method | `[PUT]` |
@@ -62,6 +69,7 @@ Update the user and return the updated resource<br>
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
 | Success Response| Status code: `200`<br>Content: `{ success: "User updated", { lName: "Tom", fName: "Steve", email: "123@123.com" } }` |
 | Error Response | Status code: `404`<br>Content: { error: "User not found" } |
+
 Sample Call:
 ```
 axios.put('/api/users/1', { fName: "Jerry", lName: "John", email: "123@123.com" })
@@ -71,7 +79,8 @@ axios.put('/api/users/1', { fName: "Jerry", lName: "John", email: "123@123.com" 
 ```
 
 ## Delete the user
-Find the user and delete it<br>
+Find the user and delete it
+
 | URL | `/users/:id` |
 |---|---|
 | Method | `[DELETe]` |
@@ -79,6 +88,7 @@ Find the user and delete it<br>
 | Data Params | None |
 | Success Response| Status code: `200`<br>Content: `{ success: "User deleted" }` |
 | Error Response | Status code: `404`<br>Content: { error: "User not found" } |
+
 Sample Call:
 ```
 axios.delete('/api/users/1')
