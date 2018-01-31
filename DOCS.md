@@ -10,7 +10,7 @@ Return a collection of users
 | Method | `[GET]` |
 | URL Params | None |
 | Data Params | None |
-| Success Response| Status code: `200`<br>Content: [{ id: 1, fName: "Henry", lName: "Ford", email: "123@123.com" }, { id: 2, fName: "Henry", lName: "Ford", email: "123@123.com" }] |
+| Success Response| Status code: `200`<br>Content: [{ id: 1, fName: "Henry", lName: "Ford", email: "123@123.com" },<br> { id: 2, fName: "Henry", lName: "Ford", email: "123@123.com" }] |
 | Error Response | Status code: `500`<br>Content: { error: "No users found" } |
 
 Sample Call:
@@ -48,7 +48,7 @@ Create a user if not existing
 | Method | `[POST]` |
 | URL Params | None |
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
-| Success Response| Status code: `201`<br>Content: `{ success: "User created", { lName: "Tom", fName: "Steve", email: "123@123.com" } }` |
+| Success Response| Status code: `201`<br>Content: { success: "User created",<br> { lName: "Tom", fName: "Steve", email: "123@123.com" } } |
 | Error Response | Status code: `400 BAD REQUEST`<br>Content: { error: "fName is required" } |
 
 Sample Call:
@@ -67,7 +67,7 @@ Update the user and return the updated resource
 | Method | `[PUT]` |
 | URL Params<br>(Required) | `id=[integer]` |
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
-| Success Response| Status code: `200`<br>Content: `{ success: "User updated", { lName: "Tom", fName: "Steve", email: "123@123.com" } }` |
+| Success Response| Status code: `200`<br>Content: { success: "User updated",<br> { lName: "Tom", fName: "Steve", email: "123@123.com" } } |
 | Error Response | Status code: `404`<br>Content: { error: "User not found" } |
 
 Sample Call:
