@@ -1,12 +1,11 @@
 # Overview
-This describes the resources that make up the **Movie** REST API v1. 
----
+This describes the resources that make up the **Movie** REST API v1.
 # Schema
 All API access is over HTTP, and accessed from the `http://localhost/5000`. All data is send and received as JSON.
 ## Show all the users
 Return a collection of users<br>
 | URL | `/users` |
-|---|--------|
+|---|---|
 | Method | `[GET]` |
 | URL Params | None |
 | Data Params | None |
@@ -23,7 +22,7 @@ axios.get('/api/users')
 ## Show single user
 Return a single user<br>
 | URL | `/users/:id` |
-|---|--------|
+|---|---|
 | Method | `[GET]` |
 | URL Params<br>(Required) | `id=[integer]` |
 | Data Params | None |
@@ -40,7 +39,7 @@ axios.get('/api/users/1')
 ## Create a user
 Create a user if not existing<br>
 | URL | `/users` |
-|---|--------|
+|---|---|
 | Method | `[POST]` |
 | URL Params | None |
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
@@ -57,7 +56,7 @@ axios.post('/api/users', { fName: "Jerry", lName: "John", email: "123@123.com" }
 ## Update the user
 Update the user and return the updated resource<br>
 | URL | `/users/:id` |
-|---|--------|
+|---|---|
 | Method | `[PUT]` |
 | URL Params<br>(Required) | `id=[integer]` |
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
@@ -74,7 +73,7 @@ axios.put('/api/users/1', { fName: "Jerry", lName: "John", email: "123@123.com" 
 ## Delete the user
 Find the user and delete it<br>
 | URL | `/users/:id` |
-|---|--------|
+|---|---|
 | Method | `[DELETe]` |
 | URL Params<br>(Required) | `id=[integer]` |
 | Data Params | None |
