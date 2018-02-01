@@ -5,8 +5,8 @@ All API access is over HTTP, and accessed from the `http://localhost/5000`. All 
 ## Show all the users
 Return a collection of users
 
-| URL | `/users` |
-|---|---|
+| URL | `/api/users` |
+|:---:|:---:|
 | Method | `[GET]` |
 | URL Params | None |
 | Data Params | None |
@@ -24,8 +24,8 @@ axios.get('/api/users')
 ## Show single user
 Return a single user
 
-| URL | `/users/:id` |
-|---|---|
+| URL | `/api/users/:id` |
+|:---:|:---:|
 | Method | `[GET]` |
 | URL Params<br>(Required) | `id=[Mongo ObjectID]` |
 | Data Params | None |
@@ -43,8 +43,8 @@ axios.get('/api/users/1')
 ## Create a user
 Create a user if not existing
 
-| URL | `/users` |
-|---|---|
+| URL | `/api/users` |
+|:---:|:---:|
 | Method | `[POST]` |
 | URL Params | None |
 | Data Params | `{ fName: [string], lName: [string], email: [string] }` |
@@ -62,11 +62,11 @@ axios.post('/api/users', { fName: "Jerry", lName: "John", email: "123@123.com" }
 ## Update the user
 Update the user and return the updated resource
 
-| URL | `/users/:id` |
-|---|---|
+| URL | `/api/users/:id` |
+|:---:|:---:|
 | Method | `[PUT]` |
-| URL Params<br>(Required) | `id=[integer]` |
-| Data Params | `{ fName: [string], lName: [string], email: [string] }` |
+| URL Params<br>(Required) | `id=[Mongo ObjectID]` |
+| Data Params | { fName: [string], lName: [string], email: [string] } |
 | Success Response| Status code: `200`<br>Content: { success: "User updated",<br> { lName: "Tom", fName: "Steve", email: "123@123.com" } } |
 | Error Response | Status code: `404`<br>Content: { error: "User not found" } |
 
@@ -81,12 +81,12 @@ axios.put('/api/users/1', { fName: "Jerry", lName: "John", email: "123@123.com" 
 ## Delete the user
 Find the user and delete it
 
-| URL | `/users/:id` |
-|---|---|
+| URL | `/api/users/:id` |
+|:---:|:---:|
 | Method | `[DELETe]` |
-| URL Params<br>(Required) | `id=[integer]` |
+| URL Params<br>(Required) | `id=[Mongo ObjectID]` |
 | Data Params | None |
-| Success Response| Status code: `200`<br>Content: `{ success: "User deleted" }` |
+| Success Response| Status code: `200`<br>Content: { success: "User deleted" } |
 | Error Response | Status code: `404`<br>Content: { error: "User not found" } |
 
 Sample Call:
