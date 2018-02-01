@@ -27,7 +27,7 @@ Return a single user
 | URL | `/users/:id` |
 |---|---|
 | Method | `[GET]` |
-| URL Params<br>(Required) | `id=[integer]` |
+| URL Params<br>(Required) | `id=[Mongo ObjectID]` |
 | Data Params | None |
 | Success Response| Status code: `200`<br>Content: { id: 1, fName: "Henry", lName: "Ford", email: "123@123.com" } |
 | Error Response | Status code: `500`<br>Content: { error: "No user found" } |
